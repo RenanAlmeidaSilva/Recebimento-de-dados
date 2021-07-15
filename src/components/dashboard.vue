@@ -87,7 +87,7 @@ export default {
         ['Temp 0', 0]
       ],
       chartOTemp0: {
-        width: 400, height: 200,
+        width: 400, height: 150,
         greenFrom: 18, greenTo: 26,
         redFrom: 42, redTo: 50,
         yellowFrom: 26, yellowTo: 42,
@@ -98,7 +98,7 @@ export default {
         ['Temp 1', 0]
       ],
       chartOTemp1: {
-        width: 400, height: 200,
+        width: 400, height: 150,
         greenFrom: 18, greenTo: 26,
         redFrom: 42, redTo: 50,
         yellowFrom: 26, yellowTo: 42,
@@ -109,7 +109,7 @@ export default {
         ['Corrente', 0]
       ],
       chartOCorrente: {
-        width: 400, height: 200,
+        width: 400, height: 150,
         greenFrom: 5, greenTo: 6.25,
         redFrom: 8.75, redTo: 10,
         yellowFrom: 6.25, yellowTo: 8.75,
@@ -120,7 +120,7 @@ export default {
         ['Tensão', 0]
       ],
       chartOTensao: {
-        width: 400, height: 200,
+        width: 400, height: 150,
         greenFrom: 370, greenTo: 377.5,
         redFrom: 392.5, redTo: 400,
         yellowFrom: 377.5, yellowTo: 392.5,
@@ -149,7 +149,7 @@ export default {
 .tabela {
   border: 4px red solid;
   margin: auto;
-  width: 400px;
+  width: 575px;
   padding: 10px;
 }
 </style>
