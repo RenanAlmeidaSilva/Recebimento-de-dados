@@ -150,9 +150,6 @@ export default {
   border: 4px red solid;
   margin: auto;
   width: 400px;
-  border-collapse: collapse;
-  text-align: center;
-  table-layout: fixed;
-  overflow: hidden;
+  padding: 10px;
 }
 </style>
