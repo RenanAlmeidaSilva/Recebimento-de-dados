@@ -36,8 +36,6 @@ export default {
   mounted() {
     this.$mqtt.subscribe('aut_lab/#')
   },
-
-
 }
 </script>
 

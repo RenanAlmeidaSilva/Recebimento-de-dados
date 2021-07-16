@@ -274,10 +274,12 @@ export default {
 
 .bordaGreen {
   border-color: #008000;
+  background-color: #b3fdb3;
 }
 
 .bordaRed {
   border-color: #ff0000;
+  background-color: #fd8585;
 }
 
 .led {
