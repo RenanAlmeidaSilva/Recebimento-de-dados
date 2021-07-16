@@ -1,6 +1,26 @@
 <template>
   <div id="app">
-    <dashboard></dashboard>
+    <div class="card2">
+      <dashboard
+          nome="maquina - 1"
+          nome-display="Machine 1"
+      />
+      &emsp;
+      <dashboard
+          nome="maquina - 2"
+          nome-display="Machine 2"
+      />
+      <br><br><br>
+      <dashboard
+          nome="maquina - 3"
+          nome-display="Machine 3"
+      />
+      &emsp;
+      <dashboard
+          nome="maquina - 4"
+          nome-display="Machine 4"
+      />
+    </div>
   </div>
 </template>
 
@@ -8,13 +28,16 @@
 
 
 import Dashboard from "@/components/dashboard";
+
 export default {
   name: 'App',
   components: {Dashboard},
 
   mounted() {
     this.$mqtt.subscribe('aut_lab/#')
-  }
+  },
+
+
 }
 </script>
 
@@ -25,6 +48,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 15px;
 }
+
+.card2 {
+  text-align: center;
+  margin: auto;
+}
+
 </style>
