@@ -10,7 +10,11 @@
 import Dashboard from "@/components/dashboard";
 export default {
   name: 'App',
-  components: {Dashboard}
+  components: {Dashboard},
+
+  mounted() {
+    this.$mqtt.subscribe('aut_lab/#')
+  }
 }
 </script>
 

@@ -12,27 +12,27 @@
         </p>
       </div>
       -->
-      <div class="tabela">
-        <table>
+      <div>
+        <table border="1" class="tabela">
           <tr>
             <th>LED 1</th>
-            <th><v-icon color="#ff0000">mdi-white-balance-sunny</v-icon></th>
+            <td><v-icon v-bind:id="{ iconGreen: ficaVerde, iconRed: ficaVermelho }">mdi-white-balance-sunny</v-icon></td>
           </tr>
           <tr>
             <th>LED 2</th>
-            <th><v-icon color="#ff0000">mdi-white-balance-sunny</v-icon></th>
+            <th><v-icon >mdi-white-balance-sunny</v-icon></th>
           </tr>
           <tr>
             <th>LED 3</th>
-            <th><v-icon color="#ff0000">mdi-white-balance-sunny</v-icon></th>
+            <th><v-icon >mdi-white-balance-sunny</v-icon></th>
           </tr>
           <tr>
             <th>LED 4</th>
-            <th><v-icon color="#ff0000">mdi-white-balance-sunny</v-icon></th>
+            <th><v-icon >mdi-white-balance-sunny</v-icon></th>
           </tr>
           <tr>
             <th>LED 5</th>
-            <th><v-icon color="#ff0000">mdi-white-balance-sunny</v-icon></th>
+            <th><v-icon >mdi-white-balance-sunny</v-icon></th>
           </tr>
         </table>
       </div>
@@ -79,8 +79,13 @@
 <script>
 export default {
   name: "dashboard",
+
   data() {
     return {
+      // mudança de cor dos icones
+      ficaVerde: true,
+      ficaVermelho: false,
+
       // Array will be automatically processed with visualization.arrayToDataTable function
       chartTemp0: [
         ['Label', 'Value'],
@@ -127,7 +132,60 @@ export default {
         minorTicks: 5, min: 370, max: 400
       }
     }
-  }
+  },
+  mqtt: {
+    'aut_lab/maquina - 1/#': function (val) {
+      let temp = String.fromCharCode.apply(null, val)
+      if (Number(temp) > 0) {
+        this.ficaVerde = true
+        this.ficaVermelho = false
+      } else {
+        this.ficaVerde = false
+        this.ficaVermelho = true
+      }
+    },
+
+    'aut_lab/maquina - 1/temp0': function (val, topic) {
+      let temp0 = String.fromCharCode.apply(null, val)
+      console.log(temp0)
+      console.log(topic)
+      this.chartTemp0 = [
+        ['Label', 'Value'],
+        ['Temp 0', Number(temp0)]
+      ]},
+    'aut_lab/maquina - 1/temp1': function (val, topic) {
+      let temp1 = String.fromCharCode.apply(null, val)
+      console.log(temp1)
+      console.log(topic)
+      this.chartTemp1 = [
+        ['Label', 'Value'],
+        ['Temp 1', Number(temp1)]
+      ]},
+    'aut_lab/maquina - 1/corrente0': function (val, topic) {
+      let corrente = String.fromCharCode.apply(null, val)
+      console.log(corrente)
+      console.log(topic)
+      this.chartCorrente = [
+        ['Label', 'Value'],
+        ['Corrente', Number(corrente)]
+      ]},
+    'aut_lab/maquina - 1/tensao0': function (val, topic) {
+      let tensao = String.fromCharCode.apply(null, val)
+      console.log(tensao)
+      console.log(topic)
+      this.chartTensao = [
+        ['Label', 'Value'],
+        ['Tensão', Number(tensao)]
+      ]},
+    'aut_lab/maquina - 1/led0': function (val, topic) {
+      let led0 = String.fromCharCode.apply(null, val)
+      console.log(led0)
+      console.log(topic)
+      this.chartTensao = [
+        ['Label', 'Value'],
+        ['LED 1', Number(led0)]
+      ]}
+  },
 }
 </script>
 
@@ -147,9 +205,15 @@ export default {
 }
 
 .tabela {
-  border: 4px red solid;
   margin: auto;
-  width: 575px;
-  padding: 10px;
+  width: 250px;
+}
+
+#iconGreen {
+  color: #008000;
+}
+
+#iconRed {
+  color: #ff0000;
 }
 </style>
