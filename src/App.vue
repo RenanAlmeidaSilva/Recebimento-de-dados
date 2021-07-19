@@ -3,7 +3,7 @@
     <div class="card2">
       <dashboard
           nome="maquina - 1"
-          nome-display="Machine 1"
+          nome-display="Machine 2"
       />
       &emsp;
       <dashboard
@@ -23,22 +23,21 @@
       <br> <br>
       <dashboard
           nome="maquina - 5"
-          nome-display="Offline"
+          nome-display="Em manutenção"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Offline"
+          nome-display="Em manutenção"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Offline"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Offline"
+          nome-display="Em manutenção"
       />
     </div>
   </div>

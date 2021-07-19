@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{bordaGreen: bordaGreen, bordaRed: bordaRed}" class="padrao card1">
+  <div v-bind:class="{bordaGreen: bordaGreen, bordaRed: bordaRed, bordaYellow: bordaYellow}" class="padrao card1">
     <h1><b>{{ nomeDisplay }}</b></h1>
     <div class="led">
       <div>
@@ -85,7 +85,7 @@ export default {
 
   props: {
     nome: {type: String, default: "maquina - 1"},
-    nomeDisplay: {type: String}
+    nomeDisplay: {type: String, default: "Offline"}
   },
 
   data() {
@@ -95,6 +95,7 @@ export default {
       ficaVermelho: [true, true, true, true, true],
       bordaRed: false,
       bordaGreen: false,
+      bordaYellow: false,
 
       // Array will be automatically processed with visualization.arrayToDataTable function
       chartTemp0: [
@@ -146,6 +147,11 @@ export default {
 
   mqtt: {
     'aut_lab/#': function (val, topic) {
+      if ("Em manutenção" === this.nomeDisplay) {
+        this.bordaYellow = true
+        this.bordaRed = false
+        this.bordaGreen = false
+      }
       if ('aut_lab/' + this.nome + '/temperatura/temp0' === topic) {
         let temp0 = String.fromCharCode.apply(null, val)
         console.log(temp0)
@@ -262,7 +268,7 @@ export default {
   margin: auto;
 }
 
-h1, table {
+h1, table, p {
   margin-top: 5px;
   color: black;
   text-transform: uppercase;
@@ -278,7 +284,12 @@ h1, table {
 
 .padrao {
   border-color: #494949;
-  background-color: #898989;
+  background-color: #a0a0a0;
+}
+
+.bordaYellow {
+  border-color: #FFC800FF;
+  background-color: #ffdb80;
 }
 
 .bordaGreen {
@@ -299,8 +310,8 @@ h1, table {
     }
 
     to {
-      border-color: #ff3300;
-      background-color: #fc886b;
+      border-color: #ff5900;
+      background-color: #ff9154;
     }
 }
 
