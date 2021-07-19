@@ -10,7 +10,7 @@
           nome="maquina - 2"
           nome-display="Machine 2"
       />
-      <br><br><br>
+      &emsp;
       <dashboard
           nome="maquina - 3"
           nome-display="Machine 3"
@@ -19,6 +19,26 @@
       <dashboard
           nome="maquina - 4"
           nome-display="Machine 4"
+      />
+      <br> <br>
+      <dashboard
+          nome="maquina - 5"
+          nome-display="Em manutenção"
+      />
+      &emsp;
+      <dashboard
+          nome="maquina - 5"
+          nome-display="Em manutenção"
+      />
+      &emsp;
+      <dashboard
+          nome="maquina - 5"
+          nome-display="Em manutenção"
+      />
+      &emsp;
+      <dashboard
+          nome="maquina - 5"
+          nome-display="Em manutenção"
       />
     </div>
   </div>
@@ -47,6 +67,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 15px;
+}
+
+body {
+  background-color: black;
 }
 
 .card2 {

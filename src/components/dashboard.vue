@@ -1,49 +1,47 @@
 <template>
   <div v-bind:class="{bordaGreen: bordaGreen, bordaRed: bordaRed}" class="card1">
     <h1><b>{{ nomeDisplay }}</b></h1>
-    <br><br>
     <div class="led">
       <div>
         <table class="tabela">
           <tr>
             <th>LED 1</th>
             <th>
-              <v-icon v-if="ficaVermelho[0]" color="#ff0000">mdi-white-balance-sunny</v-icon>
-              <v-icon v-if="ficaVerde[0]" color="#008000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVermelho[0]" color="#000000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVerde[0]" color="#ffffff">mdi-white-balance-sunny</v-icon>
             </th>
           </tr>
           <tr>
             <th>LED 2</th>
             <th>
-              <v-icon v-if="ficaVermelho[1]" color="#ff0000">mdi-white-balance-sunny</v-icon>
-              <v-icon v-if="ficaVerde[1]" color="#008000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVermelho[1]" color="#000000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVerde[1]" color="#ffffff">mdi-white-balance-sunny</v-icon>
             </th>
           </tr>
           <tr>
             <th>LED 3</th>
             <th>
-              <v-icon v-if="ficaVermelho[2]" color="#ff0000">mdi-white-balance-sunny</v-icon>
-              <v-icon v-if="ficaVerde[2]" color="#008000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVermelho[2]" color="#000000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVerde[2]" color="#ffffff">mdi-white-balance-sunny</v-icon>
             </th>
           </tr>
           <tr>
             <th>LED 4</th>
             <th>
-              <v-icon v-if="ficaVermelho[3]" color="#ff0000">mdi-white-balance-sunny</v-icon>
-              <v-icon v-if="ficaVerde[3]" color="#008000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVermelho[3]" color="#000000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVerde[3]" color="#ffffff">mdi-white-balance-sunny</v-icon>
             </th>
           </tr>
           <tr>
             <th>LED 5</th>
             <th>
-              <v-icon v-if="ficaVermelho[4]" color="#ff0000">mdi-white-balance-sunny</v-icon>
-              <v-icon v-if="ficaVerde[4]" color="#008000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVermelho[4]" color="#000000">mdi-white-balance-sunny</v-icon>
+              <v-icon v-if="ficaVerde[4]" color="#ffffff">mdi-white-balance-sunny</v-icon>
             </th>
           </tr>
         </table>
       </div>
     </div>
-    <br><br>
     <div class="centro">
       <div class="centro">
         <GChart
@@ -264,6 +262,10 @@ export default {
   margin: auto;
 }
 
+h1, table {
+  color: black;
+}
+
 .card1 {
   width: 20%;
   border: 5px white solid;
@@ -274,12 +276,25 @@ export default {
 
 .bordaGreen {
   border-color: #008000;
-  background-color: #b3fdb3;
+  background-color: #49fd4b;
 }
 
 .bordaRed {
   border-color: #ff0000;
-  background-color: #fd8585;
+  background-color: #fd4444;
+  animation: pisca 1s ease-in-out infinite alternate;
+}
+
+@keyframes pisca {
+    from {
+      border-color: #ff0000;
+      background-color: #fd4444;
+    }
+
+    to {
+      border-color: #ff0000;
+      background-color: #ff7d7d;
+    }
 }
 
 .led {
