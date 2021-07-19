@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{bordaGreen: bordaGreen, bordaRed: bordaRed}" class="card1">
+  <div v-bind:class="{bordaGreen: bordaGreen, bordaRed: bordaRed}" class="padrao card1">
     <h1><b>{{ nomeDisplay }}</b></h1>
     <div class="led">
       <div>
@@ -85,7 +85,7 @@ export default {
 
   props: {
     nome: {type: String, default: "maquina - 1"},
-    nomeDisplay: {type: String, default: "maquina - 1"}
+    nomeDisplay: {type: String}
   },
 
   data() {
@@ -93,7 +93,7 @@ export default {
       // mudança de icones
       ficaVerde: [false, false, false, false, false],
       ficaVermelho: [true, true, true, true, true],
-      bordaRed: true,
+      bordaRed: false,
       bordaGreen: false,
 
       // Array will be automatically processed with visualization.arrayToDataTable function
@@ -263,7 +263,9 @@ export default {
 }
 
 h1, table {
+  margin-top: 5px;
   color: black;
+  text-transform: uppercase;
 }
 
 .card1 {
@@ -272,6 +274,11 @@ h1, table {
   border-radius: 10px;
   display: inline-block;
   float: top;
+}
+
+.padrao {
+  border-color: #494949;
+  background-color: #898989;
 }
 
 .bordaGreen {
@@ -292,8 +299,8 @@ h1, table {
     }
 
     to {
-      border-color: #ff0000;
-      background-color: #ff7d7d;
+      border-color: #ff3300;
+      background-color: #fc886b;
     }
 }
 

@@ -23,22 +23,22 @@
       <br> <br>
       <dashboard
           nome="maquina - 5"
-          nome-display="Em manutenção"
+          nome-display="Offline"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Em manutenção"
+          nome-display="Offline"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Em manutenção"
+          nome-display="Offline"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Em manutenção"
+          nome-display="Offline"
       />
     </div>
   </div>
@@ -71,6 +71,7 @@ export default {
 
 body {
   background-color: black;
+  overflow: hidden;
 }
 
 .card2 {
