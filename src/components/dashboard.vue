@@ -79,6 +79,7 @@
   </div>
 </template>
 
+
 <script>
 export default {
   name: "dashboard",
@@ -261,6 +262,7 @@ export default {
 }
 </script>
 
+
 <style scoped>
 .centro {
   display: flex;
@@ -324,5 +326,4 @@ h1, table, p {
   margin: auto;
   width: 250px;
 }
-
 </style>
