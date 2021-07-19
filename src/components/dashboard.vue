@@ -90,7 +90,7 @@ export default {
 
   data() {
     return {
-      // mudança de icones
+      // mudança de icones e cores do card
       ficaVerde: [false, false, false, false, false],
       ficaVermelho: [true, true, true, true, true],
       bordaRed: false,
