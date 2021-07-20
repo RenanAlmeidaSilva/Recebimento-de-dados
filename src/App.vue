@@ -3,7 +3,7 @@
     <div class="card2">
       <dashboard
           nome="maquina - 1"
-          nome-display="Machine 2"
+          nome-display="Machine 1"
       />
       &emsp;
       <dashboard
@@ -20,7 +20,7 @@
           nome="maquina - 4"
           nome-display="Machine 4"
       />
-      <br> <br>
+      <br><br>
       <dashboard
           nome="maquina - 5"
           nome-display="Em manutenção"
@@ -28,11 +28,11 @@
       &emsp;
       <dashboard
           nome="maquina - 5"
-          nome-display="Em manutenção"
       />
       &emsp;
       <dashboard
           nome="maquina - 5"
+          nome-display="Em manutenção"
       />
       &emsp;
       <dashboard
@@ -43,9 +43,8 @@
   </div>
 </template>
 
+
 <script>
-
-
 import Dashboard from "@/components/dashboard";
 
 export default {
@@ -57,6 +56,7 @@ export default {
   },
 }
 </script>
+
 
 <style>
 #app {
@@ -77,5 +77,4 @@ body {
   text-align: center;
   margin: auto;
 }
-
 </style>

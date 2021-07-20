@@ -276,12 +276,18 @@ h1, table, p {
   text-transform: uppercase;
 }
 
+h1 {
+  text-shadow: 2px 2px 3px white;
+}
+
 .card1 {
   width: 20%;
+  margin-bottom: 15px;
   border: 5px white solid;
   border-radius: 10px;
   display: inline-block;
   float: top;
+  box-shadow: 3px 3px 3px white;
 }
 
 .padrao {
@@ -296,7 +302,7 @@ h1, table, p {
 
 .bordaGreen {
   border-color: #008000;
-  background-color: #49fd4b;
+  background-color: #72ff73;
 }
 
 .bordaRed {
@@ -309,9 +315,7 @@ h1, table, p {
     from {
       border-color: #ff0000;
       background-color: #fd4444;
-    }
-
-    to {
+    } to {
       border-color: #ff5900;
       background-color: #ff9154;
     }
